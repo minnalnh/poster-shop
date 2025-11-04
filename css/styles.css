@@ -7,7 +7,7 @@
 }
 
 :root {
-    --text-light: #fff;
+    --light: #fff;
     --dark: #000;
     --btn-color: #E83F57;
     --bg-header: #3DE07E;
@@ -49,10 +49,10 @@ header {
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     margin: 0 auto;
     max-width: 1100px;
-    padding: 5rem 0;
+    padding: 5rem 1rem;
+    gap: 2rem;
 
     .card img, .big-card img {
         width: 100%;
@@ -60,11 +60,10 @@ header {
 
     .big-card > section {
         height: 100%;
-        background-color: #fff;
         padding: 0 1rem;
 
         h2, p {
-            color: #000;
+            color: var(--dark);
         }
     }
 
@@ -72,8 +71,11 @@ header {
         display: flex;
         flex-direction: column;
         grid-column: span 2;
-        padding: 1rem;
         gap: 2rem;
+
+        h2, p {
+            color: var(--light);
+        }
     }
 
     .big-card {
@@ -93,27 +95,25 @@ header {
     margin-bottom: 1rem;
 }
 
-button {
+.button {
     background-color: var(--btn-color);
     border-style: none;
     margin-top: auto;
     font-size: 0.875rem;
     border-radius: 4px;
     padding: 8px 16px;
-    align-self: flex-start;
 }
 
-h2, p, button {
-    color: var(--text-light);
+.button {
+    color: var(--light);
 }
 
-h2, p, button, a {
+h2, p, .button, a {
     font-family: 'Fira Sans', sans-serif;
 }
 
 h2 {
     font-size: 3.125rem;
-    text-align: left;
 }
 
 p {
@@ -122,27 +122,129 @@ p {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, auto);
     justify-content: space-around;
     background-color: var(--bg-footer);
     height: 20rem;
     place-items: center;
 
+    h2, p {
+        color: var(--light);
+    }
+
+    p, a {
+        line-height: 1.8rem;
+    }
+
     nav {
-    grid-column: 1;
 
         a {
             display: block;
-            color: #fff;
+            color: var(--light);
             text-decoration: none;
         }
     }
+
+    .icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
 }
 
-.footer-links article:nth-of-type(1) {
-    grid-column: 2;
+@media (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .button {
+        align-self: stretch;
+    }
+
+    .big-card > section {
+        background-color: var(--light);
+    }
+
+    h2, p {
+        color: var(--dark);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
-.footer-links article:nth-of-type(2) {
-    grid-column: 3;
+@media (min-width: 601px) and (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        grid-column: span 1;
+    }
+
+    .big-card {
+        grid-column: span 2;
+    }
+
+    .big-card > section {
+        background-color: var(--light);
+    }
+
+    h2, p {
+        color: var(--dark);
+    }
+
+    .button {
+        align-self: flex-start;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+        grid-column: 1;
+    }
+
+    .footer-links article:nth-of-type(1) {
+        grid-column: 2;
+    }
+
+    .footer-links article:nth-of-type(2) {
+        grid-column: 3;
+}
+}
+
+@media (min-width: 901px) {
+    .wrapper {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .big-card > section {
+        background-color: var(--light);
+    }
+
+    h2, p {
+        color: var(--dark);
+    }
+
+    .button {
+        align-self: flex-start;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+        grid-column: 1;
+    }
+
+    .footer-links article:nth-of-type(1) {
+        grid-column: 2;
+    }
+
+    .footer-links article:nth-of-type(2) {
+        grid-column: 3;
+    }
 }
