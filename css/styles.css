@@ -61,17 +61,12 @@ header {
     .big-card > section {
         height: 100%;
         padding: 0 1rem;
-
-        h2, p {
-            color: var(--dark);
-        }
     }
 
     .card {
         display: flex;
         flex-direction: column;
-        grid-column: span 2;
-        gap: 2rem;
+        grid-column: auto / span 2;
 
         h2, p {
             color: var(--light);
@@ -79,15 +74,15 @@ header {
     }
 
     .big-card {
-        grid-column: span 3;
+        grid-column: auto / span 3;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
     }
 }
 
 .card button {
     margin-top: 2.5rem;
+    margin-top: auto;
 }
 
 .big-card button {
@@ -102,9 +97,6 @@ header {
     font-size: 0.875rem;
     border-radius: 4px;
     padding: 8px 16px;
-}
-
-.button {
     color: var(--light);
 }
 
@@ -157,15 +149,16 @@ p {
     }
 
     .button {
-        align-self: stretch;
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .big-card h2, p {
+        color: var(--light);
     }
 
     .big-card > section {
-        background-color: var(--light);
-    }
-
-    h2, p {
-        color: var(--dark);
+        background-color: var(--dark);
     }
 
     .footer-links {
@@ -179,11 +172,11 @@ p {
     }
 
     .card {
-        grid-column: span 1;
+        grid-column: auto / span 1;
     }
 
     .big-card {
-        grid-column: span 2;
+        grid-column: auto / span 2;
     }
 
     .big-card > section {
