@@ -20,7 +20,7 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(241px, 1fr));
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     background-color: var(--bg-header);
     gap: 8.5rem;
@@ -33,7 +33,6 @@ header {
 
         h1 {
         font-family: 'Roboto', sans-serif;
-        font-size: 6.375rem;
         color: var(--dark);
         margin: 0 auto;
         grid-row: 2;
@@ -60,13 +59,13 @@ header {
 
     .big-card > section {
         height: 100%;
-        padding: 0 1rem;
+        padding: .7rem 1rem;
+        gap: 1rem;
     }
 
     .card {
         display: flex;
         flex-direction: column;
-        grid-column: auto / span 2;
 
         h2, p {
             color: var(--light);
@@ -74,9 +73,12 @@ header {
     }
 
     .big-card {
-        grid-column: auto / span 3;
         display: flex;
         flex-direction: column;
+    }
+
+    .card, .big-card section {
+        gap: 1rem;
     }
 }
 
@@ -102,10 +104,6 @@ header {
 
 h2, p, .button, a {
     font-family: 'Fira Sans', sans-serif;
-}
-
-h2 {
-    font-size: 3.125rem;
 }
 
 p {
@@ -144,8 +142,12 @@ p {
 }
 
 @media (max-width: 600px) {
+    h1 {
+        font-size: 5rem;
+    }
+    
     .wrapper {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .button {
@@ -157,8 +159,18 @@ p {
         color: var(--light);
     }
 
+    .card, .big-card {
+        grid-column: auto / span 1;
+
+    }
+
     .big-card > section {
         background-color: var(--dark);
+    }
+
+    h2 {
+        font-size: 2.3rem;
+        text-align: center;
     }
 
     .footer-links {
@@ -167,16 +179,21 @@ p {
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
+    h1 {
+        font-size: 5.7rem;
+    }
+    
     .wrapper {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .card {
-        grid-column: auto / span 1;
+        grid-column: 1fr;
     }
 
     .big-card {
         grid-column: auto / span 2;
+        margin: 0 2rem;
     }
 
     .big-card > section {
@@ -185,6 +202,10 @@ p {
 
     h2, p {
         color: var(--dark);
+    }
+
+    h2 {
+        font-size: 2.3rem;
     }
 
     .button {
@@ -209,8 +230,20 @@ p {
 }
 
 @media (min-width: 901px) {
+    h1 {
+        font-size: 6.375rem;
+    }
+
     .wrapper {
         grid-template-columns: repeat(6, 1fr);
+    }
+
+    .card {
+        grid-column: auto / span 2;
+    }
+
+    .big-card {
+        grid-column: auto / span 3;
     }
 
     .big-card > section {
@@ -220,6 +253,10 @@ p {
     h2, p {
         color: var(--dark);
     }
+
+    h2 {
+    font-size: 2.5rem;
+}
 
     .button {
         align-self: flex-start;
