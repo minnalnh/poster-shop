@@ -112,7 +112,6 @@ p {
 
 .footer-links {
     display: grid;
-    justify-content: space-around;
     background-color: var(--bg-footer);
     height: 20rem;
     place-items: center;
