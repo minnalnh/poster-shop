@@ -21,7 +21,7 @@ body {
 header {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, 1fr);
     background-color: var(--bg-header);
     gap: 8.5rem;
 
@@ -103,6 +103,7 @@ header {
     border-radius: 4px;
     padding: 8px 16px;
     color: var(--light);
+    cursor: pointer;
 }
 
 h2, p, .button, a {
@@ -116,7 +117,7 @@ p {
 .footer-links {
     display: grid;
     background-color: var(--bg-footer);
-    height: 20rem;
+    padding: 3rem 0;
     place-items: center;
 
     h2, p {
